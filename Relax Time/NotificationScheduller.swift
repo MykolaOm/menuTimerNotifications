@@ -11,8 +11,22 @@ import UserNotifications
 class NotificationScheduller: NSObject  {
     private let id = "stop work hard"
     private let unCenter = UNUserNotificationCenter.current()
-    private var interval: TimeInterval = 3
-    private var repeated: Bool = false
+    private var interval: TimeInterval = 3 {
+        didSet {
+            if interval < 60.0 && repeated == true {
+                interval = 60
+            }
+        }
+    }
+    private var repeated: Bool = false {
+        didSet {
+            if repeated {
+                if interval < 60 {
+                    interval = 60
+                }
+            }
+        }
+    }
 
     //MARK: Controlls
     

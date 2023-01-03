@@ -28,11 +28,11 @@ struct Relax_TimeApp: App {
             Toggle("repeat", isOn: $repeated)
             Divider()
             Text("Set time:")
-            Button("30") {
-                nCenter.setTime(time: 30)
+            Button("30m") {
+                nCenter.setTime(time: 30*60)
             }.keyboardShortcut("3")
-            Button("15") {
-                nCenter.setTime(time: 15)
+            Button("15m") {
+                nCenter.setTime(time: 15*60)
             }.keyboardShortcut("5")
             Divider()
             Button("Quit") {
