@@ -7,8 +7,6 @@
 
 import Foundation
 import UserNotifications
-import Cocoa
-import SwiftUI
 
 class NotificationScheduller: NSObject  {
     private let id = "stop work hard"
@@ -16,8 +14,28 @@ class NotificationScheduller: NSObject  {
     private var interval: TimeInterval = 3
     private var repeated: Bool = false
 
+    //MARK: Controlls
+    
     func turnOnNotification() {
         setDelegate()
+        requestAuth()
+        setNotification()
+    }
+    
+    func setRepeated(repeating: Bool) {
+        self.repeated = repeating
+    }
+    
+    func setTime(time: TimeInterval) {
+        self.interval = time
+    }
+    
+    func stopReceiveNotifications() {
+        self.unCenter.removePendingNotificationRequests(withIdentifiers: [id])
+    }
+    
+    // MARK: Private methods
+    private func requestAuth() {
         unCenter.requestAuthorization(options: [.alert,.sound]) { (authorized, error) in
             if authorized {
                 print("yep authorized")
@@ -27,6 +45,9 @@ class NotificationScheduller: NSObject  {
                 print("got \(error as Any)" )
             }
         }
+    }
+    
+    private func setNotification() {
         unCenter.getNotificationSettings { (settings) in
             if settings.authorizationStatus == .authorized {
                 let request = self.request()
@@ -43,19 +64,7 @@ class NotificationScheduller: NSObject  {
         }
     }
     
-    func setRepeated(repeating: Bool) {
-        self.repeated = repeating
-    }
-    
-    func setTime(time: TimeInterval) {
-        self.interval = time
-    }
-    
-    func stopReceiveNotifications() {
-        self.unCenter.removePendingNotificationRequests(withIdentifiers: [id])
-    }
-    
-    func request() -> UNNotificationRequest {
+    private func request() -> UNNotificationRequest {
         let content = UNMutableNotificationContent()
         content.title = "Wake up bitch!"
         content.subtitle = "Go play tenis"

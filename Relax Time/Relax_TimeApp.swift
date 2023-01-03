@@ -15,15 +15,15 @@ struct Relax_TimeApp: App {
     
     var body: some Scene {
         MenuBarExtra(currentNumber, systemImage: "power\(currentNumber)") {
-                Button("turn off") {
-                    currentNumber = "off"
-                }.keyboardShortcut("1")
-                    .tint(.red)
-                Button("turn on") {
-                    currentNumber = "on"
-                    nCenter.setRepeated(repeating: repeated)
-                    nCenter.turnOnNotification()
-                }.keyboardShortcut("2")
+            Button("turn off") {
+                currentNumber = "off"
+            }.keyboardShortcut("1")
+                .tint(.red)
+            Button("turn on") {
+                currentNumber = "on"
+                nCenter.setRepeated(repeating: repeated)
+                nCenter.turnOnNotification()
+            }.keyboardShortcut("2")
             Divider()
             Toggle("repeat", isOn: $repeated)
             Divider()
@@ -38,7 +38,7 @@ struct Relax_TimeApp: App {
             Button("Quit") {
                 NSApplication.shared.terminate(nil)
             }.keyboardShortcut("q")
-        }//.menuBarExtraStyle(.menu)
+        }
     }
     
         
