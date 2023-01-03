@@ -11,6 +11,7 @@
 		F20059B82964BD9C00D0F72B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20059B72964BD9C00D0F72B /* ContentView.swift */; };
 		F20059BA2964BD9F00D0F72B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F20059B92964BD9F00D0F72B /* Assets.xcassets */; };
 		F20059BD2964BD9F00D0F72B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F20059BC2964BD9F00D0F72B /* Preview Assets.xcassets */; };
+		F20059C52964C01300D0F72B /* NotificationScheduller.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20059C42964C01300D0F72B /* NotificationScheduller.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +21,7 @@
 		F20059B92964BD9F00D0F72B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F20059BC2964BD9F00D0F72B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F20059BE2964BD9F00D0F72B /* Relax_Time.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Relax_Time.entitlements; sourceTree = "<group>"; };
+		F20059C42964C01300D0F72B /* NotificationScheduller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationScheduller.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +55,7 @@
 			isa = PBXGroup;
 			children = (
 				F20059B52964BD9C00D0F72B /* Relax_TimeApp.swift */,
+				F20059C42964C01300D0F72B /* NotificationScheduller.swift */,
 				F20059B72964BD9C00D0F72B /* ContentView.swift */,
 				F20059B92964BD9F00D0F72B /* Assets.xcassets */,
 				F20059BE2964BD9F00D0F72B /* Relax_Time.entitlements */,
@@ -141,6 +144,7 @@
 			files = (
 				F20059B82964BD9C00D0F72B /* ContentView.swift in Sources */,
 				F20059B62964BD9C00D0F72B /* Relax_TimeApp.swift in Sources */,
+				F20059C52964C01300D0F72B /* NotificationScheduller.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,6 +278,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -301,6 +306,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
